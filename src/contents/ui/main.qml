@@ -31,7 +31,7 @@ PlasmaCore.Dialog {
     property bool showZoneOverlay: config.zoneOverlayShowWhen == 0
     property var errors: []
 
-    title: "KZones Overlay"
+    title: "KLodestone Overlay"
     location: PlasmaCore.Types.Desktop
     type: PlasmaCore.Dialog.OnScreenDisplay
     backgroundHints: PlasmaCore.Types.NoBackground
@@ -103,12 +103,12 @@ PlasmaCore.Dialog {
 
     function log(message) {
         if (!config.enableDebugLogging) return;
-        console.log("KZones: " + message);
+        console.log("KLodestone: " + message);
     }
 
     function show() {
         // show OSD
-        console.log("KZones: Show");
+        console.log("KLodestone: Show");
         mainDialog.shown = true;
         mainDialog.visible = true;
         mainDialog.setWidth(Workspace.virtualScreenSize.width);

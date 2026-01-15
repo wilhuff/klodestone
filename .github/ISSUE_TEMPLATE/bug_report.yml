@@ -1,5 +1,5 @@
 name: Bug Report
-description: Report a bug in KZones
+description: Report a bug in KLodestone
 labels: ["bug"]
 body:
     - type: checkboxes
@@ -40,10 +40,10 @@ body:
           label: Screenshots
           description: If possible, include screenshots (or a video) to help explain the issue.
     - type: dropdown
-      id: kzones_version
+      id: klodestone_version
       attributes:
-        label: KZones Version
-        description: You can find this in the about section of KZones in the KWin Script Settings window.
+        label: KLodestone Version
+        description: You can find this in the about section of KLodestone in the KWin Script Settings window.
         options:
           - Development build
           - Release v0.9.1

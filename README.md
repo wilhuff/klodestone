@@ -1,12 +1,12 @@
-# KZones
+# KLodestone
 
 <img align="right" width="125" height="75" src="./media/icon.png">
 
 KDE KWin Script for snapping windows into zones. Handy when using a (super) ultrawide monitor, an alternative to PowerToys FancyZones and Windows 11 snap layouts.
 
 [![kde-store](https://img.shields.io/badge/KDE%20Store-download-blue?logo=KDE)](https://store.kde.org/p/1909220)
-[![aur-package](https://img.shields.io/aur/version/kwin-scripts-kzones?logo=archlinux)](https://aur.archlinux.org/packages/kwin-scripts-kzones)
-[![nixos-package](https://img.shields.io/badge/NixOS-package-blue?logo=nixos)](https://mynixos.com/nixpkgs/package/kdePackages.kzones)
+[![aur-package](https://img.shields.io/aur/version/kwin-scripts-klodestone?logo=archlinux)](https://aur.archlinux.org/packages/kwin-scripts-klodestone)
+[![nixos-package](https://img.shields.io/badge/NixOS-package-blue?logo=nixos)](https://mynixos.com/nixpkgs/package/kdePackages.klodestone)
 
 ## Features
 
@@ -36,41 +36,41 @@ Create multiple layouts and cycle between them.
 
 ### Keyboard Shortcuts
 
-KZones comes with a set of [shortcuts](#shortcuts) to move your windows between zones and layouts.
+KLodestone comes with a set of [shortcuts](#shortcuts) to move your windows between zones and layouts.
 
 ![](./media/shortcuts.gif)
 
 ### Theming
 
-By using the same colors as your selected color scheme, KZones will blend in perfectly with your desktop.
+By using the same colors as your selected color scheme, KLodestone will blend in perfectly with your desktop.
 
 ![](./media/theming.png)
 
 ## Installation
 
-To install KZones you can either use the built-in script manager or clone the repo and build it yourself.
+To install KLodestone you can either use the built-in script manager or clone the repo and build it yourself.
 
 ### KWin Script Manager
 
-Navigate to `System Settings / Window Management / KWin Scripts / Get New…` and search for KZones.  
+Navigate to `System Settings / Window Management / KWin Scripts / Get New…` and search for KLodestone.  
 
 Depending on your Plasma version, one of these packages will be downloaded and installed:
 
-- [KZones](https://store.kde.org/p/1909220)
-- [KZones for Plasma 5](https://store.kde.org/p/2143914)
+- [KLodestone](https://store.kde.org/p/1909220)
+- [KLodestone for Plasma 5](https://store.kde.org/p/2143914)
 
 ### Build it yourself
 
 Make sure you have "zip" installed on your system before building.
 
 ```sh
-git clone https://github.com/gerritdevriese/kzones
-cd kzones && make
+git clone https://github.com/wilhuff/klodestone
+cd klodestone && make
 ```
 
 ## Configuration
 
-The script settings can be found under `System Settings / Window Management / KWin Scripts / KZones / ⚙️`
+The script settings can be found under `System Settings / Window Management / KWin Scripts / KLodestone / ⚙️`
 
 ### General
 
@@ -324,7 +324,7 @@ List of all available shortcuts:
 | Snap all windows                                   | <kbd>Meta</kbd> + <kbd>Space</kbd>                                  |
 | Snap active window                                 | <kbd>Meta</kbd> + <kbd>Shift</kbd> + <kbd>Space</kbd>               |
 
-*To change the default bindings, go to `System Settings / Shortcuts` and search for KZones*
+*To change the default bindings, go to `System Settings / Shortcuts` and search for KLodestone*
 
 > [!NOTE]  
 > Not all shortcuts will be bound by default as they conflift with existing system bindings.
@@ -340,7 +340,7 @@ Install the "Geometry change" KWin effect to animate window movements: https://s
 Replace the last part with any shortcut from the list above:
 
 ```sh
-qdbus org.kde.kglobalaccel /component/kwin invokeShortcut "KZones: Cycle layouts"
+qdbus org.kde.kglobalaccel /component/kwin invokeShortcut "KLodestone: Cycle layouts"
 ```
 
 ### Clean corrupted shortcuts
@@ -368,7 +368,7 @@ This is a known issue with the KWin Scripting API
 If you are using X11 make sure your compositor is enabled, as it is needed to draw transparent windows.  
 You can find this setting in `System Settings / Display and Monitor / Compositor`
 
-### Auto-update broke KZones on Plasma 5
+### Auto-update broke KLodestone on Plasma 5
 
 Due to API changes in KWin 6, the newer versions of the script are not backwards compatible with Plasma 5.  
-If you were already subscribed to KZones using the script manager and updated to the latest version by accident, you will need to uninstall the script and subscribe to [KZones for Plasma 5](https://store.kde.org/p/2143914) instead.
+If you were already subscribed to KLodestone using the script manager and updated to the latest version by accident, you will need to uninstall the script and subscribe to [KLodestone for Plasma 5](https://store.kde.org/p/2143914) instead.

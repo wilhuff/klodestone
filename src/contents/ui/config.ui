@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>KWin::KZonesConfigForm</class>
- <widget class="QWidget" name="KWin::KZonesConfigForm">
+ <class>KWin::KLodestoneConfigForm</class>
+ <widget class="QWidget" name="KWin::KLodestoneConfigForm">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -521,7 +521,7 @@
             <item>
              <widget class="QLabel" name="label_shortcutsExplanation">
               <property name="text">
-               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To set up shortcuts for this script&lt;/p&gt;&lt;p&gt;Go to System Settings / Shortcuts and search for &amp;quot;KZones&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+               <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;To set up shortcuts for this script&lt;/p&gt;&lt;p&gt;Go to System Settings / Shortcuts and search for &amp;quot;KLodestone&amp;quot;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
               </property>
               <property name="alignment">
                <set>Qt::AlignCenter</set>
@@ -659,10 +659,10 @@
      <item>
       <widget class="QLabel" name="label_mainBottomLeft">
        <property name="toolTip">
-        <string>https://github.com/gerritdevriese/kzones</string>
+        <string>https://github.com/wilhuff/klodestone</string>
        </property>
        <property name="text">
-        <string>&lt;a href=&quot;https://github.com/gerritdevriese/kzones&quot;&gt;Github page&lt;/a&gt;</string>
+        <string>&lt;a href=&quot;https://github.com/wilhuff/klodestone&quot;&gt;Github page&lt;/a&gt;</string>
        </property>
        <property name="margin">
         <number>8</number>

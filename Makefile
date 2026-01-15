@@ -1,4 +1,4 @@
-SCRIPT_NAME := kzones
+SCRIPT_NAME := klodestone
 PKGFILE := $(SCRIPT_NAME).kwinscript
 SRC_DIR := src
 SESSION_WIDTH := 1920

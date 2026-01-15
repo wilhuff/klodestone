@@ -6,8 +6,8 @@ Item {
     signal cycleLayouts()
 
     ShortcutHandler {
-        name: "KZones: Cycle layouts"
-        text: "KZones: Cycle layouts"
+        name: "KLodestone: Cycle layouts"
+        text: "KLodestone: Cycle layouts"
         sequence: "Ctrl+Alt+D"
         onActivated: {
             cycleLayouts();
@@ -17,8 +17,8 @@ Item {
     signal cycleLayoutsReversed()
 
     ShortcutHandler {
-        name: "KZones: Cycle layouts (reversed)"
-        text: "KZones: Cycle layouts (reversed)"
+        name: "KLodestone: Cycle layouts (reversed)"
+        text: "KLodestone: Cycle layouts (reversed)"
         sequence: "Ctrl+Alt+Shift+D"
         onActivated: {
             cycleLayoutsReversed();
@@ -28,8 +28,8 @@ Item {
     signal moveActiveWindowToNextZone()
 
     ShortcutHandler {
-        name: "KZones: Move active window to next zone"
-        text: "KZones: Move active window to next zone"
+        name: "KLodestone: Move active window to next zone"
+        text: "KLodestone: Move active window to next zone"
         sequence: "Ctrl+Alt+Right"
         onActivated: {
             moveActiveWindowToNextZone()
@@ -39,8 +39,8 @@ Item {
     signal moveActiveWindowToPreviousZone()
 
     ShortcutHandler {
-        name: "KZones: Move active window to previous zone"
-        text: "KZones: Move active window to previous zone"
+        name: "KLodestone: Move active window to previous zone"
+        text: "KLodestone: Move active window to previous zone"
         sequence: "Ctrl+Alt+Left"
         onActivated: {
             moveActiveWindowToPreviousZone()
@@ -50,8 +50,8 @@ Item {
     signal toggleZoneOverlay()
 
     ShortcutHandler {
-        name: "KZones: Toggle zone overlay"
-        text: "KZones: Toggle zone overlay"
+        name: "KLodestone: Toggle zone overlay"
+        text: "KLodestone: Toggle zone overlay"
         sequence: "Ctrl+Alt+C"
         onActivated: {
             toggleZoneOverlay();
@@ -61,8 +61,8 @@ Item {
     signal switchToNextWindowInCurrentZone()
 
     ShortcutHandler {
-        name: "KZones: Switch to next window in current zone"
-        text: "KZones: Switch to next window in current zone"
+        name: "KLodestone: Switch to next window in current zone"
+        text: "KLodestone: Switch to next window in current zone"
         sequence: "Ctrl+Alt+Up"
         onActivated: {
             switchToNextWindowInCurrentZone()
@@ -72,8 +72,8 @@ Item {
     signal switchToPreviousWindowInCurrentZone()
 
     ShortcutHandler {
-        name: "KZones: Switch to previous window in current zone"
-        text: "KZones: Switch to previous window in current zone"
+        name: "KLodestone: Switch to previous window in current zone"
+        text: "KLodestone: Switch to previous window in current zone"
         sequence: "Ctrl+Alt+Down"
         onActivated: {
             switchToPreviousWindowInCurrentZone()
@@ -86,8 +86,8 @@ Item {
         model: [1, 2, 3, 4, 5, 6, 7, 8, 9]
         delegate: Item {
             ShortcutHandler {
-                name: "KZones: Move active window to zone " + modelData
-                text: "KZones: Move active window to zone " + modelData
+                name: "KLodestone: Move active window to zone " + modelData
+                text: "KLodestone: Move active window to zone " + modelData
                 sequence: "Ctrl+Alt+Num+" + modelData
                 onActivated: {
                     moveActiveWindowToZone(modelData - 1)
@@ -102,8 +102,8 @@ Item {
         model: [1, 2, 3, 4, 5, 6, 7, 8, 9]
         delegate: Item {
             ShortcutHandler {
-                name: "KZones: Activate layout " + modelData
-                text: "KZones: Activate layout " + modelData
+                name: "KLodestone: Activate layout " + modelData
+                text: "KLodestone: Activate layout " + modelData
                 sequence: "Meta+Num+" + modelData
                 onActivated: {
                     activateLayout(modelData - 1)
@@ -115,8 +115,8 @@ Item {
     signal moveActiveWindowUp()
 
     ShortcutHandler {
-        name: "KZones: Move active window up"
-        text: "KZones: Move active window up"
+        name: "KLodestone: Move active window up"
+        text: "KLodestone: Move active window up"
         sequence: "Meta+Up"
         onActivated: {
             moveActiveWindowUp()
@@ -126,8 +126,8 @@ Item {
     signal moveActiveWindowDown()
 
     ShortcutHandler {
-        name: "KZones: Move active window down"
-        text: "KZones: Move active window down"
+        name: "KLodestone: Move active window down"
+        text: "KLodestone: Move active window down"
         sequence: "Meta+Down"
         onActivated: {
             moveActiveWindowDown()
@@ -137,8 +137,8 @@ Item {
     signal moveActiveWindowLeft()
 
     ShortcutHandler {
-        name: "KZones: Move active window left"
-        text: "KZones: Move active window left"
+        name: "KLodestone: Move active window left"
+        text: "KLodestone: Move active window left"
         sequence: "Meta+Left"
         onActivated: {
             moveActiveWindowLeft()
@@ -148,8 +148,8 @@ Item {
     signal moveActiveWindowRight()
 
     ShortcutHandler {
-        name: "KZones: Move active window right"
-        text: "KZones: Move active window right"
+        name: "KLodestone: Move active window right"
+        text: "KLodestone: Move active window right"
         sequence: "Meta+Right"
         onActivated: {
             moveActiveWindowRight()
@@ -159,8 +159,8 @@ Item {
     signal snapActiveWindow()
 
     ShortcutHandler {
-        name: "KZones: Snap active window"
-        text: "KZones: Snap active window"
+        name: "KLodestone: Snap active window"
+        text: "KLodestone: Snap active window"
         sequence: "Meta+Shift+Space"
         onActivated: {
             snapActiveWindow()
@@ -170,8 +170,8 @@ Item {
     signal snapAllWindows()
 
     ShortcutHandler {
-        name: "KZones: Snap all windows"
-        text: "KZones: Snap all windows"
+        name: "KLodestone: Snap all windows"
+        text: "KLodestone: Snap all windows"
         sequence: "Meta+Space"
         onActivated: {
             snapAllWindows()
