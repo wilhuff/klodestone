@@ -19,7 +19,7 @@ build: $(PKGFILE)
 
 $(PKGFILE): $(shell find $(SRC_DIR) -type f)
 	@echo "Packaging $(SRC_DIR) into $(PKGFILE)..."
-	@zip -rq $(PKGFILE) $(SRC_DIR)
+	@cd $(SRC_DIR) && zip -rq ../$(PKGFILE) .
 
 install: build
 	@echo "Installing $(PKGFILE)..."

@@ -3,178 +3,122 @@ import org.kde.kwin
 
 Item {
 
-    signal cycleLayouts()
+    // Thirds
+    signal moveToLeftThird()
+    signal moveToCenterThird()
+    signal moveToRightThird()
 
+    // Two-thirds
+    signal moveToLeftTwoThirds()
+    signal moveToRightTwoThirds()
+
+    // Halves (horizontal)
+    signal moveToLeftHalf()
+    signal moveToRightHalf()
+
+    // Halves (vertical)
+    signal moveToTopHalf()
+    signal moveToBottomHalf()
+
+    // Quarters
+    signal moveToTopLeftQuarter()
+    signal moveToTopRightQuarter()
+    signal moveToBottomLeftQuarter()
+    signal moveToBottomRightQuarter()
+
+    // Thirds shortcuts
     ShortcutHandler {
-        name: "KLodestone: Cycle layouts"
-        text: "KLodestone: Cycle layouts"
+        name: "KLodestone: Move to left third"
+        text: "KLodestone: Move to left third"
         sequence: "Ctrl+Alt+D"
-        onActivated: {
-            cycleLayouts();
-        }
+        onActivated: moveToLeftThird()
     }
-
-    signal cycleLayoutsReversed()
 
     ShortcutHandler {
-        name: "KLodestone: Cycle layouts (reversed)"
-        text: "KLodestone: Cycle layouts (reversed)"
-        sequence: "Ctrl+Alt+Shift+D"
-        onActivated: {
-            cycleLayoutsReversed();
-        }
+        name: "KLodestone: Move to center third"
+        text: "KLodestone: Move to center third"
+        sequence: "Ctrl+Alt+F"
+        onActivated: moveToCenterThird()
     }
-
-    signal moveActiveWindowToNextZone()
 
     ShortcutHandler {
-        name: "KLodestone: Move active window to next zone"
-        text: "KLodestone: Move active window to next zone"
-        sequence: "Ctrl+Alt+Right"
-        onActivated: {
-            moveActiveWindowToNextZone()
-        }
+        name: "KLodestone: Move to right third"
+        text: "KLodestone: Move to right third"
+        sequence: "Ctrl+Alt+G"
+        onActivated: moveToRightThird()
     }
 
-    signal moveActiveWindowToPreviousZone()
+    // Two-thirds shortcuts
+    ShortcutHandler {
+        name: "KLodestone: Move to left two-thirds"
+        text: "KLodestone: Move to left two-thirds"
+        sequence: "Ctrl+Alt+E"
+        onActivated: moveToLeftTwoThirds()
+    }
 
     ShortcutHandler {
-        name: "KLodestone: Move active window to previous zone"
-        text: "KLodestone: Move active window to previous zone"
-        sequence: "Ctrl+Alt+Left"
-        onActivated: {
-            moveActiveWindowToPreviousZone()
-        }
+        name: "KLodestone: Move to right two-thirds"
+        text: "KLodestone: Move to right two-thirds"
+        sequence: "Ctrl+Alt+T"
+        onActivated: moveToRightTwoThirds()
     }
 
-    signal toggleZoneOverlay()
+    // Halves shortcuts (horizontal)
+    ShortcutHandler {
+        name: "KLodestone: Move to left half"
+        text: "KLodestone: Move to left half"
+        sequence: "Ctrl+Alt+H"
+        onActivated: moveToLeftHalf()
+    }
 
     ShortcutHandler {
-        name: "KLodestone: Toggle zone overlay"
-        text: "KLodestone: Toggle zone overlay"
-        sequence: "Ctrl+Alt+C"
-        onActivated: {
-            toggleZoneOverlay();
-        }
+        name: "KLodestone: Move to right half"
+        text: "KLodestone: Move to right half"
+        sequence: "Ctrl+Alt+L"
+        onActivated: moveToRightHalf()
     }
 
-    signal switchToNextWindowInCurrentZone()
+    // Halves shortcuts (vertical)
+    ShortcutHandler {
+        name: "KLodestone: Move to top half"
+        text: "KLodestone: Move to top half"
+        sequence: "Ctrl+Alt+K"
+        onActivated: moveToTopHalf()
+    }
 
     ShortcutHandler {
-        name: "KLodestone: Switch to next window in current zone"
-        text: "KLodestone: Switch to next window in current zone"
-        sequence: "Ctrl+Alt+Up"
-        onActivated: {
-            switchToNextWindowInCurrentZone()
-        }
+        name: "KLodestone: Move to bottom half"
+        text: "KLodestone: Move to bottom half"
+        sequence: "Ctrl+Alt+J"
+        onActivated: moveToBottomHalf()
     }
 
-    signal switchToPreviousWindowInCurrentZone()
+    // Quarters shortcuts
+    ShortcutHandler {
+        name: "KLodestone: Move to top-left quarter"
+        text: "KLodestone: Move to top-left quarter"
+        sequence: "Ctrl+Alt+U"
+        onActivated: moveToTopLeftQuarter()
+    }
 
     ShortcutHandler {
-        name: "KLodestone: Switch to previous window in current zone"
-        text: "KLodestone: Switch to previous window in current zone"
-        sequence: "Ctrl+Alt+Down"
-        onActivated: {
-            switchToPreviousWindowInCurrentZone()
-        }
+        name: "KLodestone: Move to top-right quarter"
+        text: "KLodestone: Move to top-right quarter"
+        sequence: "Ctrl+Alt+I"
+        onActivated: moveToTopRightQuarter()
     }
-
-    signal moveActiveWindowToZone(int zone)
-
-    Repeater {
-        model: [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        delegate: Item {
-            ShortcutHandler {
-                name: "KLodestone: Move active window to zone " + modelData
-                text: "KLodestone: Move active window to zone " + modelData
-                sequence: "Ctrl+Alt+Num+" + modelData
-                onActivated: {
-                    moveActiveWindowToZone(modelData - 1)
-                }
-            }
-        }
-    }
-
-    signal activateLayout(int layout)
-
-    Repeater {
-        model: [1, 2, 3, 4, 5, 6, 7, 8, 9]
-        delegate: Item {
-            ShortcutHandler {
-                name: "KLodestone: Activate layout " + modelData
-                text: "KLodestone: Activate layout " + modelData
-                sequence: "Meta+Num+" + modelData
-                onActivated: {
-                    activateLayout(modelData - 1)
-                }
-            }
-        }
-    }
-
-    signal moveActiveWindowUp()
 
     ShortcutHandler {
-        name: "KLodestone: Move active window up"
-        text: "KLodestone: Move active window up"
-        sequence: "Meta+Up"
-        onActivated: {
-            moveActiveWindowUp()
-        }
+        name: "KLodestone: Move to bottom-left quarter"
+        text: "KLodestone: Move to bottom-left quarter"
+        sequence: "Ctrl+Alt+N"
+        onActivated: moveToBottomLeftQuarter()
     }
 
-    signal moveActiveWindowDown()
-
     ShortcutHandler {
-        name: "KLodestone: Move active window down"
-        text: "KLodestone: Move active window down"
-        sequence: "Meta+Down"
-        onActivated: {
-            moveActiveWindowDown()
-        }
-    }
-
-    signal moveActiveWindowLeft()
-
-    ShortcutHandler {
-        name: "KLodestone: Move active window left"
-        text: "KLodestone: Move active window left"
-        sequence: "Meta+Left"
-        onActivated: {
-            moveActiveWindowLeft()
-        }
-    }
-
-    signal moveActiveWindowRight()
-
-    ShortcutHandler {
-        name: "KLodestone: Move active window right"
-        text: "KLodestone: Move active window right"
-        sequence: "Meta+Right"
-        onActivated: {
-            moveActiveWindowRight()
-        }
-    }
-
-    signal snapActiveWindow()
-
-    ShortcutHandler {
-        name: "KLodestone: Snap active window"
-        text: "KLodestone: Snap active window"
-        sequence: "Meta+Shift+Space"
-        onActivated: {
-            snapActiveWindow()
-        }
-    }
-
-    signal snapAllWindows()
-
-    ShortcutHandler {
-        name: "KLodestone: Snap all windows"
-        text: "KLodestone: Snap all windows"
-        sequence: "Meta+Space"
-        onActivated: {
-            snapAllWindows()
-        }
+        name: "KLodestone: Move to bottom-right quarter"
+        text: "KLodestone: Move to bottom-right quarter"
+        sequence: "Ctrl+Alt+M"
+        onActivated: moveToBottomRightQuarter()
     }
 }
