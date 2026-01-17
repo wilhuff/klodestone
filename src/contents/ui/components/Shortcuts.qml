@@ -26,99 +26,99 @@ Item {
     signal moveToBottomLeftQuarter()
     signal moveToBottomRightQuarter()
 
-    // Thirds shortcuts
-    ShortcutHandler {
-        name: "KLodestone: Move to left third"
-        text: "KLodestone: Move to left third"
-        sequence: "Ctrl+Alt+D"
-        onActivated: moveToLeftThird()
-    }
-
-    ShortcutHandler {
-        name: "KLodestone: Move to center third"
-        text: "KLodestone: Move to center third"
-        sequence: "Ctrl+Alt+F"
-        onActivated: moveToCenterThird()
-    }
-
-    ShortcutHandler {
-        name: "KLodestone: Move to right third"
-        text: "KLodestone: Move to right third"
-        sequence: "Ctrl+Alt+G"
-        onActivated: moveToRightThird()
-    }
-
-    // Two-thirds shortcuts
-    ShortcutHandler {
-        name: "KLodestone: Move to left two-thirds"
-        text: "KLodestone: Move to left two-thirds"
-        sequence: "Ctrl+Alt+E"
-        onActivated: moveToLeftTwoThirds()
-    }
-
-    ShortcutHandler {
-        name: "KLodestone: Move to right two-thirds"
-        text: "KLodestone: Move to right two-thirds"
-        sequence: "Ctrl+Alt+T"
-        onActivated: moveToRightTwoThirds()
-    }
-
     // Halves shortcuts (horizontal)
     ShortcutHandler {
-        name: "KLodestone: Move to left half"
-        text: "KLodestone: Move to left half"
+        name: "KLodestone: Halves - Move Left"
+        text: "KLodestone: Halves - Move Left"
         sequence: "Ctrl+Alt+H"
         onActivated: moveToLeftHalf()
     }
 
     ShortcutHandler {
-        name: "KLodestone: Move to right half"
-        text: "KLodestone: Move to right half"
+        name: "KLodestone: Halves - Move Right"
+        text: "KLodestone: Halves - Move Right"
         sequence: "Ctrl+Alt+L"
         onActivated: moveToRightHalf()
     }
 
     // Halves shortcuts (vertical)
     ShortcutHandler {
-        name: "KLodestone: Move to top half"
-        text: "KLodestone: Move to top half"
+        name: "KLodestone: Halves - Move Top"
+        text: "KLodestone: Halves - Move Top"
         sequence: "Ctrl+Alt+K"
         onActivated: moveToTopHalf()
     }
 
     ShortcutHandler {
-        name: "KLodestone: Move to bottom half"
-        text: "KLodestone: Move to bottom half"
+        name: "KLodestone: Halves - Move Bottom"
+        text: "KLodestone: Halves - Move Bottom"
         sequence: "Ctrl+Alt+J"
         onActivated: moveToBottomHalf()
     }
 
     // Quarters shortcuts
     ShortcutHandler {
-        name: "KLodestone: Move to top-left quarter"
-        text: "KLodestone: Move to top-left quarter"
+        name: "KLodestone: Quarters - Move Top Left"
+        text: "KLodestone: Quarters - Move Top Left"
         sequence: "Ctrl+Alt+U"
         onActivated: moveToTopLeftQuarter()
     }
 
     ShortcutHandler {
-        name: "KLodestone: Move to top-right quarter"
-        text: "KLodestone: Move to top-right quarter"
+        name: "KLodestone: Quarters - Move Top Right"
+        text: "KLodestone: Quarters - Move Top Right"
         sequence: "Ctrl+Alt+I"
         onActivated: moveToTopRightQuarter()
     }
 
     ShortcutHandler {
-        name: "KLodestone: Move to bottom-left quarter"
-        text: "KLodestone: Move to bottom-left quarter"
+        name: "KLodestone: Quarters - Move Bottom Left"
+        text: "KLodestone: Quarters - Move Bottom Left"
         sequence: "Ctrl+Alt+N"
         onActivated: moveToBottomLeftQuarter()
     }
 
     ShortcutHandler {
-        name: "KLodestone: Move to bottom-right quarter"
-        text: "KLodestone: Move to bottom-right quarter"
+        name: "KLodestone: Quarters - Move Bottom Right"
+        text: "KLodestone: Quarters - Move Bottom Right"
         sequence: "Ctrl+Alt+M"
         onActivated: moveToBottomRightQuarter()
+    }
+
+    // Thirds shortcuts
+    ShortcutHandler {
+        name: "KLodestone: Thirds - Move Left"
+        text: "KLodestone: Thirds - Move Left"
+        sequence: "Ctrl+Alt+D"
+        onActivated: moveToLeftThird()
+    }
+
+    ShortcutHandler {
+        name: "KLodestone: Thirds - Move Center"
+        text: "KLodestone: Thirds - Move Center"
+        sequence: "Ctrl+Alt+F"
+        onActivated: moveToCenterThird()
+    }
+
+    ShortcutHandler {
+        name: "KLodestone: Thirds - Move Right"
+        text: "KLodestone: Thirds - Move Right"
+        sequence: "Ctrl+Alt+G"
+        onActivated: moveToRightThird()
+    }
+
+    // Two Thirds shortcuts
+    ShortcutHandler {
+        name: "KLodestone: Two Thirds - Move Left"
+        text: "KLodestone: Two Thirds - Move Left"
+        sequence: "Ctrl+Alt+E"
+        onActivated: moveToLeftTwoThirds()
+    }
+
+    ShortcutHandler {
+        name: "KLodestone: Two Thirds - Move Right"
+        text: "KLodestone: Two Thirds - Move Right"
+        sequence: "Ctrl+Alt+T"
+        onActivated: moveToRightTwoThirds()
     }
 }
