@@ -2,49 +2,25 @@
 
 <img align="right" width="125" height="75" src="./media/icon.png">
 
-KDE KWin Script for snapping windows into zones. Handy when using a (super) ultrawide monitor, an alternative to PowerToys FancyZones and Windows 11 snap layouts.
+KDE KWin Script for snapping windows into positions using keyboard shortcuts. Handy when using a mix of ultrawide and regular monitors and inspired by Magnet on macOS--an alternative to PowerToys FancyZones and Windows 11 snap layouts.
 
 [![kde-store](https://img.shields.io/badge/KDE%20Store-download-blue?logo=KDE)](https://store.kde.org/p/1909220)
-[![aur-package](https://img.shields.io/aur/version/kwin-scripts-klodestone?logo=archlinux)](https://aur.archlinux.org/packages/kwin-scripts-klodestone)
-[![nixos-package](https://img.shields.io/badge/NixOS-package-blue?logo=nixos)](https://mynixos.com/nixpkgs/package/kdePackages.klodestone)
+
+KLodestone is based heavily on [KZones](https://github.com/gerritdevriese/kzones). Many thanks to gerritdevriese for the ideas and code.
 
 ## Features
 
-### Zone Selector
+### Keyboard Shortcuts
 
-The Zone Selector is a small widget that appears when you drag a window to the top of the screen. It allows you to snap the window to a zone regardless of the current layout.
-
-![](./media/selector.gif)
-
-### Zone Overlay
-
-The Zone Overlay is a fullscreen overlay that appears when you move a window. It shows all zones from the current layout and the window will snap to the zone you drop it on.
-
-![](./media/dragdrop.gif)
+KLodestone provides window position presets accessible via keyboard shortcuts. Move windows to thirds, halves, quarters, or two-thirds positions with a quick key combo. This is not an automatic tiling window manager; you still pick and choose where windows go, but now it's effortless to arrange things the way you like without having to pre-program or switch between static layouts.
 
 ### Edge Snapping
 
-Edge Snapping allows you to snap windows to zones by dragging them to the edge of the screen.
+Drag windows to the edge or corner of the screen to snap them into position.
 
-![](./media/edgesnapping.gif)
+### Screen Cycling
 
-### Multiple Layouts
-
-Create multiple layouts and cycle between them.
-
-![](./media/layouts.gif)
-
-### Keyboard Shortcuts
-
-KLodestone comes with a set of [shortcuts](#shortcuts) to move your windows between zones and layouts.
-
-![](./media/shortcuts.gif)
-
-### Theming
-
-By using the same colors as your selected color scheme, KLodestone will blend in perfectly with your desktop.
-
-![](./media/theming.png)
+When a window is already at an edge position, repeating the shortcut moves it to the same position on the next screen.
 
 ## Installation
 
@@ -52,12 +28,7 @@ To install KLodestone you can either use the built-in script manager or clone th
 
 ### KWin Script Manager
 
-Navigate to `System Settings / Window Management / KWin Scripts / Get New…` and search for KLodestone.  
-
-Depending on your Plasma version, one of these packages will be downloaded and installed:
-
-- [KLodestone](https://store.kde.org/p/1909220)
-- [KLodestone for Plasma 5](https://store.kde.org/p/2143914)
+Navigate to `System Settings / Window Management / KWin Scripts / Get New…` and search for KLodestone.
 
 ### Build it yourself
 
@@ -74,221 +45,31 @@ The script settings can be found under `System Settings / Window Management / KW
 
 ### General
 
-#### Zone Selector
-
-The zone selector is a small widget that appears when you drag a window to the top of the screen. It allows you to snap the window to a zone regardless of the current layout.
-
-- Enable or disable the zone selector.
-- Set the distance from the top of the screen at which the zone selector will start to appear.
-
-#### Zone Overlay
-
-The zone overlay is a fullscreen overlay that appears when you move a window. It shows all zones from the current layout and the window will snap to the zone you drop it on.
-
-- Enable or disable the zone overlay.
-- Choose whether the overlay should be shown when you start moving a window or when you press the toggle overlay shortcut.
-- Choose where the cursor needs to be in order to highlight a zone, either in the center of the zone or anywhere inside the zone.
-- Choose if you want the indicator to display all zones or only the highlighted zone.
-
 #### Edge Snapping
 
-Edge Snapping allows you to snap windows to zones by dragging them to the edge of the screen. Make sure to disable the default edge snapping functionality before enabling this.
+Snap windows to positions by dragging them to the edge of the screen.
 
 - Enable or disable edge snapping.
-- Set the distance from the edge of the screen at which the edge snapping will start to appear.
+- Set the distance from the edge of the screen at which edge snapping activates.
 
 #### Remember and restore window geometries
 
-The script will remember the geometry of each window when it's moved to a zone. When the window is moved out of the zone, it will be restored to it's original geometry.
-
-- Enable or disable this behavior.
-
-#### Track active layout per screen
-
-If you have multiple monitors, you can enable this to track the active layout per screen. This will allow you to have different active layouts on different screens.
-
-- Enable or disable this behavior.
-
-#### Automatically snap all new windows
-
-When a new window is launched, the script will automatically snap it to its closest zone.
+The script remembers the geometry of each window when it's moved to a position. When the window is moved out of the position, it will be restored to its original geometry.
 
 - Enable or disable this behavior.
 
 #### Display OSD messages
 
-Disable this if you don't want to see any OSD messages.
+Disable this if you don't want to see any messages on-screen after moving a window.
 
 - Enable or disable this behavior.
-
-#### Fade windows while moving
-
-Reduce the opacity of other windows while the active window is being moved.
-
-- Enable or disable this behavior.
-
-### Layouts
-
-You can define your own layouts by modifying the JSON in the **Layouts** tab in the script settings, here are some examples to get you started:
-
-#### Examples
-
-<details open>
-  <summary>Simple</summary>
-
-```json
-[
-    {
-        "name": "Layout 1",
-        "padding": 0,
-        "zones": [
-            {
-                "x": 0,
-                "y": 0,
-                "height": 100,
-                "width": 25
-            },
-            {
-                "x": 25,
-                "y": 0,
-                "height": 100,
-                "width": 50
-            },
-            {
-                "x": 75,
-                "y": 0,
-                "height": 100,
-                "width": 25
-            }
-        ]
-    }
-]
-```
-
-</details>
-
-<details>
-  <summary>Advanced</summary>
-
-```json
-[
-    {
-        "name": "Priority Grid",
-        "padding": 0,
-        "zones": [
-            {
-                "x": 0,
-                "y": 0,
-                "height": 100,
-                "width": 25
-            },
-            {
-                "x": 25,
-                "y": 0,
-                "height": 100,
-                "width": 50,
-                "applications": ["firefox"]
-            },
-            {
-                "x": 75,
-                "y": 0,
-                "height": 100,
-                "width": 25
-            }
-        ]
-    },
-    {
-        "name": "Quadrant Grid",
-        "padding": 0,
-        "zones": [
-            {
-                "x": 0,
-                "y": 0,
-                "height": 50,
-                "width": 50
-            },
-            {
-                "x": 0,
-                "y": 50,
-                "height": 50,
-                "width": 50
-            },
-            {
-                "x": 50,
-                "y": 50,
-                "height": 50,
-                "width": 50
-            },
-            {
-                "x": 50,
-                "y": 0,
-                "height": 50,
-                "width": 50
-            }
-        ]
-    },
-    {
-        "name": "Columns",
-        "padding": 0,
-        "zones": [
-            {
-                "x": 0,
-                "y": 0,
-                "height": 100,
-                "width": 25
-            },
-            {
-                "x": 25,
-                "y": 0,
-                "height": 100,
-                "width": 25
-            },
-            {
-                "x": 50,
-                "y": 0,
-                "height": 100,
-                "width": 25
-            },
-            {
-                "x": 75,
-                "y": 0,
-                "height": 100,
-                "width": 25
-            }
-        ]
-    }
-]
-```
-
-</details>
-
-#### Explanation
-
-The main array can contain as many layouts as you want:
-
-Each **layout** object needs the following keys:
-
-- `name`: The name of the layout, shown when cycling between layouts
-- `padding`: The amount of space between the window and the zone in pixels
-- `zones`: An array containing all zone objects for this layout
-
-Each **zone** object can contain the following keys:
-
-- `x`, `y`: position of the top left corner of the zone in screen percentage
-- `width`, `height`: size of the zone in screen percentage
-- `applications`: an array of window classes that should snap to this zone when launched (optional)
-- `indicator`: an object containing the indicator settings (optional)
-  - `position`: default is `center`, other options are `top-left`, `top-center`, `top-right`, `right-center`, `bottom-right`, `bottom-center`, `bottom-left`, `left-center`
-  - `margin`: an object containing the margin for the indicator
-    - `top`, `right`, `bottom`, `left`: margin in pixels
-- `color`: a color name or hex value to tint the zone with (optional)
 
 ### Filters
 
-Stop certain windows from snapping to zones by adding them to the filter list.
+Stop certain windows from snapping by adding them to the filter list.
 
 - Select the filter mode, either **Include** or **Exclude**.
-- Add window classes to the list seperated by a newline.
+- Add window classes to the list separated by a newline.
 
 You can enable the debug overlay to see the window class of the active window.
 
@@ -296,7 +77,7 @@ You can enable the debug overlay to see the window class of the active window.
 
 #### Polling rate
 
-The polling rate is the amount of time between each zone check when dragging a window. The default is 100ms, a faster polling rate is more accurate but will use more CPU. You can change this to your liking.
+The polling rate is the amount of time between each position check when dragging a window. The default is 100ms, a faster polling rate is more accurate but will use more CPU.
 
 #### Debugging
 
@@ -304,30 +85,25 @@ Here you can enable logging or turn on the debug overlay.
 
 ## Shortcuts
 
-List of all available shortcuts:
+All shortcuts use <kbd>Ctrl</kbd> + <kbd>Alt</kbd> as the modifier:
 
-| Shortcut                                           | Default Binding                                                     |
-| -------------------------------------------------- | ------------------------------------------------------------------- |
-| Move active window to zone                         | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Num 0-9</kbd>               |
-| Move active window to previous zone                | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Left</kbd>                  |
-| Move active window to next zone                    | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Right</kbd>                 |
-| Switch to previous window in current zone          | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Down</kbd>                  |
-| Switch to next window in current zone              | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Up</kbd>                    |
-| Cycle layouts                                      | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>D</kbd>                     |
-| Cycle layouts (reversed)                           | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>  |
-| Toggle zone overlay                                | <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>C</kbd>                     |
-| Activate layout                                    | <kbd>Meta</kbd> + <kbd>Num 0-9</kbd>                                |
-| Move active window up                              | <kbd>Meta</kbd> + <kbd>Up</kbd>                                     |
-| Move active window down                            | <kbd>Meta</kbd> + <kbd>Down</kbd>                                   |
-| Move active window left                            | <kbd>Meta</kbd> + <kbd>Left</kbd>                                   |
-| Move active window right                           | <kbd>Meta</kbd> + <kbd>Right</kbd>                                  |
-| Snap all windows                                   | <kbd>Meta</kbd> + <kbd>Space</kbd>                                  |
-| Snap active window                                 | <kbd>Meta</kbd> + <kbd>Shift</kbd> + <kbd>Space</kbd>               |
+| Position | Key |
+| -------- | --- |
+| Left Third | <kbd>D</kbd> |
+| Center Third | <kbd>F</kbd> |
+| Right Third | <kbd>G</kbd> |
+| Left Two-Thirds | <kbd>E</kbd> |
+| Right Two-Thirds | <kbd>T</kbd> |
+| Left Half | <kbd>H</kbd> |
+| Right Half | <kbd>L</kbd> |
+| Top Half | <kbd>K</kbd> |
+| Bottom Half | <kbd>J</kbd> |
+| Top-Left Quarter | <kbd>U</kbd> |
+| Top-Right Quarter | <kbd>I</kbd> |
+| Bottom-Left Quarter | <kbd>N</kbd> |
+| Bottom-Right Quarter | <kbd>M</kbd> |
 
 *To change the default bindings, go to `System Settings / Shortcuts` and search for KLodestone*
-
-> [!NOTE]  
-> Not all shortcuts will be bound by default as they conflift with existing system bindings.
 
 ## Tips and Tricks
 
@@ -340,7 +116,7 @@ Install the "Geometry change" KWin effect to animate window movements: https://s
 Replace the last part with any shortcut from the list above:
 
 ```sh
-qdbus org.kde.kglobalaccel /component/kwin invokeShortcut "KLodestone: Cycle layouts"
+qdbus org.kde.kglobalaccel /component/kwin invokeShortcut "KLodestone: Halves - Move Left"
 ```
 
 ### Clean corrupted shortcuts
@@ -355,20 +131,14 @@ qdbus org.kde.kglobalaccel /component/kwin org.kde.kglobalaccel.Component.cleanU
 
 ### The script doesn't work
 
-Check if your KDE Plasma version is at 6 or higher (for older versions, check the releases)  
-Make sure there is at least one layout defined in the script settings and that it contains at least one zone.
+Check if your KDE Plasma version is 6 or higher.
 
 ### My settings are not saved
 
-After changing settings, reload the script by disabling, saving and enabling it again.  
-This is a known issue with the KWin Scripting API
+After changing settings, reload the script by disabling, saving and enabling it again.
+This is a known issue with the KWin Scripting API.
 
 ### The screen turns black while moving a window
 
-If you are using X11 make sure your compositor is enabled, as it is needed to draw transparent windows.  
-You can find this setting in `System Settings / Display and Monitor / Compositor`
-
-### Auto-update broke KLodestone on Plasma 5
-
-Due to API changes in KWin 6, the newer versions of the script are not backwards compatible with Plasma 5.  
-If you were already subscribed to KLodestone using the script manager and updated to the latest version by accident, you will need to uninstall the script and subscribe to [KLodestone for Plasma 5](https://store.kde.org/p/2143914) instead.
+If you are using X11 make sure your compositor is enabled, as it is needed to draw transparent windows.
+You can find this setting in `System Settings / Display and Monitor / Compositor`.
